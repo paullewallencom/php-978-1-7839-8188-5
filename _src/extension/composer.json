@@ -1,0 +1,19 @@
+{
+    "name": "malicious/app-info",
+    "version": "1.0.0",
+    "description": "Example extension which reveals important information about the application",
+    "keywords": ["yii2", "application-info", "example-extension"],
+    "license": "CC-0",
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "type": "yii2-extension",
+    "autoload": {
+        "psr-4": {
+            "malicious\\": ""
+        }
+    },
+    "extra": {
+        "bootstrap": "malicious\\Bootstrap"
+    }
+}

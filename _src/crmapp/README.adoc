@@ -1,0 +1,119 @@
+= Example CRM Application for "Web Application Development with Yii 2"
+:author: Mark Safronov <hijarian@gmail.com>
+:date: 2014-09-24
+:toc:
+
+NOTE: This README is in the AsciiDoc format. 
+      You convert it to HTML using the `asciidoc README.adoc` commandline invocation.
+
+== Description
+
+This is the code bundle for book "Web Application Development with Yii 2" by Mark Safronov, from Packt Publishing.
+
+It contains all the example code we were using through the course of this book.
+
+It uses the http://git-scm.com/[Git] version control history repository.
+As the result, full history of all changes is preserved and you can inspect each change as it was introduced in the book, separately from others.
+See the "Usage" section.
+
+Note that this `README.adoc` file exists only in the final form of this repository, so if you travel back in history it will "disappear", which is normal.
+
+Together with this particular repository you should have the code for extension we were building in the Chapter 9. Note that that codebase is already included in here, in one of the relevant history branches.
+
+== Usage
+
+=== History browsing 
+
+You can see log of all changes made through the course of the book using command `git log`.
+
+It presents the list of commits to you, each commit uniquely identified with the hash, like `1814615536f60927b0a2c4c30a101f4908b37ba4`.
+
+You can see what was introduced into the codebase with the particular commit by using command `git show`, like that:
+
+[source,shell]
+----
+$ git show 1814615536f60927b0a2c4c30a101f4908b37ba4
+----
+
+You can shorten the hash, while it still continues to be unique among others.
+Usually first six characters are enough:
+
+[source,shell]
+----
+$ git show 181461
+----
+
+In case of this particular commit even first four characters would be enough.
+It's not so important if you copy-paste hashes from `git log` output, though.
+
+You can *change the state of the codebase* according to the given commit, that is,
+move through history back and forth, by using the `git checkout` command.
+For example, you can revert everything back how it was looking like after the commit 1814615536f60927b0a2c4c30a101f4908b37ba4 by using the command:
+
+[source,shell]
+----
+$ git checkout 181461
+----
+
+All important milestones in code are marked with Git tags (so you will not need to remember ttheir hashes). Here they are:
+
+* `chapter_02_end`
+* `chapter_03_end`
+* `chapter_04_end`
+* `chapter_05_end`
+* `chapter_06_end`
+* `chapter_07_end`
+* `chapter_08_end`
+* `chapter_09_start`
+* `chapter_10_end`
+* `chapter_11_end`
+* `chapter_12_end`
+* `chapter_13_end `
+
+You can go to any of these milestones by issuing `git checkout` command, for example:
+
+[source,shell]
+----
+$ git checkout chapter_11_end
+----
+
+In Chapter 9 we split into three options (we are building an extension there).
+These options are represented as Git branches. Here they are:
+
+* `extension-composer-git`
+* `extension-composer-package`
+* `extension-manual-loading`
+
+You go to branch in the same way you go to tag, by `git checkout` command, for example:
+
+[source,shell]
+----
+$ git checkout extension-manual-loading
+----
+
+You also have a special branch for our little experiment with routing in Chapter 8:
+
+* `ridiculous_example_of_modules`
+
+And you have a master branch which is the main course of actions (it DOES NOT have any of changes from Chapter 9!).
+
+* `master`
+
+If you checkout the master branch, you will end up at the final state of the codebase, at the end of the book.
+
+=== Running the web application
+
+This codebase is prepared according to the explanations in Appendix A.
+You need Virtualbox and Vagrant installed in your machine.
+After that all you need is to run the following command at the root of codebase:
+
+[source,shell]
+----
+$ vagrant up
+----
+
+Three provisioning scripts will bring the virtual machine to the fully functional state.
+According to ports declared in `Vagrantfile`, you can access the example CRM application afterwards by the URL http://localhost:8888.
+
+See all other instructions in the Appendix A.
+

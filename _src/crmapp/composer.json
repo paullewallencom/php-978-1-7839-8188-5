@@ -1,0 +1,12 @@
+{
+    "require": {
+        "codeception/codeception": "2.0.1",
+        "fzaninotto/faker": "v1.4.0",
+        "yiisoft/yii2": "*",
+        "netwing/selenium-server-standalone": "2.39.0",
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-swiftmailer": "*"
+    },
+    "minimum-stability" : "dev"
+}
